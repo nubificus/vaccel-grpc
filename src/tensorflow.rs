@@ -903,7 +903,7 @@ impl ::protobuf::reflect::ProtobufValue for TensorflowModelUnloadResponse {
 pub struct TFTensor {
     // message fields
     pub data: ::std::vec::Vec<u8>,
-    pub dims: ::std::vec::Vec<u64>,
+    pub dims: ::std::vec::Vec<usize>,
     pub field_type: TFDataType,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
@@ -950,7 +950,7 @@ impl TFTensor {
     // repeated uint64 dims = 2;
 
 
-    pub fn get_dims(&self) -> &[u64] {
+    pub fn get_dims(&self) -> &[usize] {
         &self.dims
     }
     pub fn clear_dims(&mut self) {
@@ -958,17 +958,17 @@ impl TFTensor {
     }
 
     // Param is passed by value, moved
-    pub fn set_dims(&mut self, v: ::std::vec::Vec<u64>) {
+    pub fn set_dims(&mut self, v: ::std::vec::Vec<usize>) {
         self.dims = v;
     }
 
     // Mutable pointer to the field.
-    pub fn mut_dims(&mut self) -> &mut ::std::vec::Vec<u64> {
+    pub fn mut_dims(&mut self) -> &mut ::std::vec::Vec<usize> {
         &mut self.dims
     }
 
     // Take field
-    pub fn take_dims(&mut self) -> ::std::vec::Vec<u64> {
+    pub fn take_dims(&mut self) -> ::std::vec::Vec<usize> {
         ::std::mem::replace(&mut self.dims, ::std::vec::Vec::new())
     }
 
