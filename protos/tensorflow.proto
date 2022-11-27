@@ -20,7 +20,7 @@ import "error.proto";
 
 message TensorflowModelLoadRequest {
 	uint32 session_id = 1;
-	int64 model_id = 2;
+	size_t model_id = 2;
 };
 
 message TensorflowModelLoadResponse {
@@ -32,7 +32,7 @@ message TensorflowModelLoadResponse {
 
 message TensorflowModelUnloadRequest {
 	uint32 session_id = 1;
-	int64 model_id = 2;
+	size_t model_id = 2;
 };
 
 message TensorflowModelUnloadResponse {
@@ -85,12 +85,12 @@ message TFNode {
 	string name = 1;
 
 	// Id of the node
-	int64 id = 2;
+	size_t id = 2;
 };
 
 message TensorflowModelRunRequest {
 	uint32 session_id = 1;
-	int64 model_id = 2;
+	size_t model_id = 2;
 
 	// Run options
 	bytes run_options = 3;
