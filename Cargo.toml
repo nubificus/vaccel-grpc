@@ -4,7 +4,8 @@ version = "0.3.2"
 authors = [ "Babis Chalios <mail@bchalios.io>", 
             "Kostis Papazafeiropoulos <papazof@gmail.com>", 
             "Anastassios Nanos <ananos@nubificus.co.uk>",
-            "George Pyrros <gpyrros@nubificus.co.uk>"]
+            "George Pyrros <gpyrros@nubificus.co.uk>",
+            "Shenghao Qiu <shenghao@nubificus.co.uk>"]
 edition = "2021"
 license = "Apache-2.0"
 
