@@ -6,12 +6,12 @@ authors = [ "Babis Chalios <mail@bchalios.io>",
             "Anastassios Nanos <ananos@nubificus.co.uk>",
             "George Pyrros <gpyrros@nubificus.co.uk>",
             "Shenghao Qiu <shenghao@nubificus.co.uk>"]
-edition = "2021"
-license = "Apache-2.0"
+edition.workspace = true
+license.workspace = true
 
 [dependencies]
-ttrpc = { git = "https://github.com/nubificus/ttrpc-rust.git", tag = "v0.6.1-vaccel-1" }
-protobuf = "2.28.0"
+ttrpc.workspace = true
+protobuf.workspace = true
 
 [build-dependencies]
 ttrpc-codegen = "0.2.0"
