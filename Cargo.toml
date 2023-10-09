@@ -12,6 +12,7 @@ license.workspace = true
 [dependencies]
 ttrpc.workspace = true
 protobuf.workspace = true
+async-trait = "0.1.42"
 
 [build-dependencies]
-ttrpc-codegen = "0.2.0"
+ttrpc-codegen = "0.4.2"
