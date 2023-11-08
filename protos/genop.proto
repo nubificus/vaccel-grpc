@@ -21,6 +21,8 @@ import "error.proto";
 message GenopArg {
 	uint32 size = 1;
 	bytes buf = 2;
+	uint32 parts = 3;
+	uint32 part_no = 4;
 };
 
 message GenopRequest {
@@ -39,8 +41,4 @@ message GenopResponse {
 		VaccelError error = 1;
 		GenopResult result = 2;
 	}
-};
-
-message GenopStreamRequest {
-	bytes data = 1;
 };
