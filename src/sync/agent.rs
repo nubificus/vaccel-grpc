@@ -131,26 +131,31 @@ impl ::protobuf::reflect::ProtobufValue for VaccelEmpty {
 static file_descriptor_proto_data: &'static [u8] = b"\
     \n\x10sync/agent.proto\x12\x06vaccel\x1a\rsession.proto\x1a\x0fresources\
     .proto\x1a\x0bimage.proto\x1a\x10tensorflow.proto\x1a\x0btorch.proto\x1a\
-    \x0bgenop.proto\x1a\x0fprofiling.proto\"\r\n\x0bVaccelEmpty2\xad\x08\n\
-    \x0bVaccelAgent\x12L\n\rCreateSession\x12\x1c.vaccel.CreateSessionReques\
-    t\x1a\x1d.vaccel.CreateSessionResponse\x12D\n\x0eDestroySession\x12\x1d.\
-    vaccel.DestroySessionRequest\x1a\x13.vaccel.VaccelEmpty\x12O\n\x0eCreate\
-    Resource\x12\x1d.vaccel.CreateResourceRequest\x1a\x1e.vaccel.CreateResou\
-    rceResponse\x12H\n\x10RegisterResource\x12\x1f.vaccel.RegisterResourceRe\
-    quest\x1a\x13.vaccel.VaccelEmpty\x12L\n\x12UnregisterResource\x12!.vacce\
-    l.UnregisterResourceRequest\x1a\x13.vaccel.VaccelEmpty\x12F\n\x0fDestroy\
-    Resource\x12\x1e.vaccel.DestroyResourceRequest\x1a\x13.vaccel.VaccelEmpt\
-    y\x12^\n\x13ImageClassification\x12\".vaccel.ImageClassificationRequest\
+    \x0bgenop.proto\x1a\x0fprofiling.proto\"\r\n\x0bVaccelEmpty2\xf4\n\n\x0b\
+    VaccelAgent\x12L\n\rCreateSession\x12\x1c.vaccel.CreateSessionRequest\
+    \x1a\x1d.vaccel.CreateSessionResponse\x12D\n\x0eDestroySession\x12\x1d.v\
+    accel.DestroySessionRequest\x1a\x13.vaccel.VaccelEmpty\x12O\n\x0eCreateR\
+    esource\x12\x1d.vaccel.CreateResourceRequest\x1a\x1e.vaccel.CreateResour\
+    ceResponse\x12H\n\x10RegisterResource\x12\x1f.vaccel.RegisterResourceReq\
+    uest\x1a\x13.vaccel.VaccelEmpty\x12L\n\x12UnregisterResource\x12!.vaccel\
+    .UnregisterResourceRequest\x1a\x13.vaccel.VaccelEmpty\x12F\n\x0fDestroyR\
+    esource\x12\x1e.vaccel.DestroyResourceRequest\x1a\x13.vaccel.VaccelEmpty\
+    \x12^\n\x13ImageClassification\x12\".vaccel.ImageClassificationRequest\
     \x1a#.vaccel.ImageClassificationResponse\x12^\n\x13TensorflowModelLoad\
     \x12\".vaccel.TensorflowModelLoadRequest\x1a#.vaccel.TensorflowModelLoad\
     Response\x12d\n\x15TensorflowModelUnload\x12$.vaccel.TensorflowModelUnlo\
     adRequest\x1a%.vaccel.TensorflowModelUnloadResponse\x12[\n\x12Tensorflow\
     ModelRun\x12!.vaccel.TensorflowModelRunRequest\x1a\".vaccel.TensorflowMo\
-    delRunResponse\x12^\n\x13TorchJitloadForward\x12\".vaccel.TorchJitloadFo\
-    rwardRequest\x1a#.vaccel.TorchJitloadForwardResponse\x124\n\x05Genop\x12\
-    \x14.vaccel.GenopRequest\x1a\x15.vaccel.GenopResponse\x12@\n\tGetTimers\
-    \x12\x18.vaccel.ProfilingRequest\x1a\x19.vaccel.ProfilingResponseb\x06pr\
-    oto3\
+    delRunResponse\x12j\n\x17TensorflowLiteModelLoad\x12&.vaccel.TensorflowL\
+    iteModelLoadRequest\x1a'.vaccel.TensorflowLiteModelLoadResponse\x12p\n\
+    \x19TensorflowLiteModelUnload\x12(.vaccel.TensorflowLiteModelUnloadReque\
+    st\x1a).vaccel.TensorflowLiteModelUnloadResponse\x12g\n\x16TensorflowLit\
+    eModelRun\x12%.vaccel.TensorflowLiteModelRunRequest\x1a&.vaccel.Tensorfl\
+    owLiteModelRunResponse\x12^\n\x13TorchJitloadForward\x12\".vaccel.TorchJ\
+    itloadForwardRequest\x1a#.vaccel.TorchJitloadForwardResponse\x124\n\x05G\
+    enop\x12\x14.vaccel.GenopRequest\x1a\x15.vaccel.GenopResponse\x12@\n\tGe\
+    tTimers\x12\x18.vaccel.ProfilingRequest\x1a\x19.vaccel.ProfilingResponse\
+    b\x06proto3\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
