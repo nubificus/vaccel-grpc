@@ -62,6 +62,11 @@ impl VaccelAgentClient {
         ::ttrpc::async_client_request!(self, ctx, req, "vaccel.VaccelAgent", "UnregisterResource", cres);
     }
 
+    pub async fn set_resource_deps(&self, ctx: ttrpc::context::Context, req: &super::resources::SetResourceDepsRequest) -> ::ttrpc::Result<super::agent::VaccelEmpty> {
+        let mut cres = super::agent::VaccelEmpty::new();
+        ::ttrpc::async_client_request!(self, ctx, req, "vaccel.VaccelAgent", "SetResourceDeps", cres);
+    }
+
     pub async fn destroy_resource(&self, ctx: ttrpc::context::Context, req: &super::resources::DestroyResourceRequest) -> ::ttrpc::Result<super::agent::VaccelEmpty> {
         let mut cres = super::agent::VaccelEmpty::new();
         ::ttrpc::async_client_request!(self, ctx, req, "vaccel.VaccelAgent", "DestroyResource", cres);
@@ -185,6 +190,17 @@ struct UnregisterResourceMethod {
 impl ::ttrpc::r#async::MethodHandler for UnregisterResourceMethod {
     async fn handler(&self, ctx: ::ttrpc::r#async::TtrpcContext, req: ::ttrpc::Request) -> ::ttrpc::Result<::ttrpc::Response> {
         ::ttrpc::async_request_handler!(self, ctx, req, resources, UnregisterResourceRequest, unregister_resource);
+    }
+}
+
+struct SetResourceDepsMethod {
+    service: Arc<Box<dyn VaccelAgent + Send + Sync>>,
+}
+
+#[async_trait]
+impl ::ttrpc::r#async::MethodHandler for SetResourceDepsMethod {
+    async fn handler(&self, ctx: ::ttrpc::r#async::TtrpcContext, req: ::ttrpc::Request) -> ::ttrpc::Result<::ttrpc::Response> {
+        ::ttrpc::async_request_handler!(self, ctx, req, resources, SetResourceDepsRequest, set_resource_deps);
     }
 }
 
@@ -340,6 +356,9 @@ pub trait VaccelAgent: Sync {
     async fn unregister_resource(&self, _ctx: &::ttrpc::r#async::TtrpcContext, _: super::resources::UnregisterResourceRequest) -> ::ttrpc::Result<super::agent::VaccelEmpty> {
         Err(::ttrpc::Error::RpcStatus(::ttrpc::get_status(::ttrpc::Code::NOT_FOUND, "/vaccel.VaccelAgent/UnregisterResource is not supported".to_string())))
     }
+    async fn set_resource_deps(&self, _ctx: &::ttrpc::r#async::TtrpcContext, _: super::resources::SetResourceDepsRequest) -> ::ttrpc::Result<super::agent::VaccelEmpty> {
+        Err(::ttrpc::Error::RpcStatus(::ttrpc::get_status(::ttrpc::Code::NOT_FOUND, "/vaccel.VaccelAgent/SetResourceDeps is not supported".to_string())))
+    }
     async fn destroy_resource(&self, _ctx: &::ttrpc::r#async::TtrpcContext, _: super::resources::DestroyResourceRequest) -> ::ttrpc::Result<super::agent::VaccelEmpty> {
         Err(::ttrpc::Error::RpcStatus(::ttrpc::get_status(::ttrpc::Code::NOT_FOUND, "/vaccel.VaccelAgent/DestroyResource is not supported".to_string())))
     }
@@ -400,6 +419,9 @@ pub fn create_vaccel_agent(service: Arc<Box<dyn VaccelAgent + Send + Sync>>) -> 
 
     methods.insert("UnregisterResource".to_string(),
                     Box::new(UnregisterResourceMethod{service: service.clone()}) as Box<dyn ::ttrpc::r#async::MethodHandler + Send + Sync>);
+
+    methods.insert("SetResourceDeps".to_string(),
+                    Box::new(SetResourceDepsMethod{service: service.clone()}) as Box<dyn ::ttrpc::r#async::MethodHandler + Send + Sync>);
 
     methods.insert("DestroyResource".to_string(),
                     Box::new(DestroyResourceMethod{service: service.clone()}) as Box<dyn ::ttrpc::r#async::MethodHandler + Send + Sync>);

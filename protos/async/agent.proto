@@ -34,6 +34,7 @@ service VaccelAgent {
 	rpc CreateResource(CreateResourceRequest) returns (CreateResourceResponse);
 	rpc RegisterResource(RegisterResourceRequest) returns (VaccelEmpty);
 	rpc UnregisterResource(UnregisterResourceRequest) returns (VaccelEmpty);
+	rpc SetResourceDeps(SetResourceDepsRequest) returns (VaccelEmpty);
 	rpc DestroyResource(DestroyResourceRequest) returns (VaccelEmpty);
 
 	// Image Classification API
